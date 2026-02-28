@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: 222 47% 4%;
+  --foreground: 210 40% 98%;
+
+  --card: 222 47% 6%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 6%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 217 33% 12%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 33% 12%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 240 50% 16%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62% 50%;
+  --border: 217 33% 14%;
+  --input: 217 33% 14%;
+  --ring: 212 100% 50%;
+
+  --radius: 14px;
+}
+
+.light {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --primary: 222 47% 11%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 40%;
+
+  --accent: 226 100% 96%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 62% 45%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 212 100% 40%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui;
+}
+
+/* Key accessibility: preserve focus outlines for keyboard users */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
