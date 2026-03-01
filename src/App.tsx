@@ -9,9 +9,33 @@ import { AboutSection } from "./components/sections/about";
 import { ContactSection } from "./components/sections/contact";
 import { Footer } from "./components/sections/footer";
 
+import * as React from "react";
+
 import { portfolio } from "./data/portfolio";
+import { getPortfolioProjectsFromCosmic } from "./lib/cosmic";
 
 export default function App() {
+  const [projects, setProjects] = React.useState(portfolio.projects.items);
+
+  React.useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const items = await getPortfolioProjectsFromCosmic();
+        if (cancelled) return;
+        if (items.length > 0) setProjects(items);
+      } catch {
+        if (cancelled) return;
+        setProjects(portfolio.projects.items);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <div className="min-h-dvh bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 -z-10">
@@ -26,7 +50,7 @@ export default function App() {
       <main className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         <HeroSection data={portfolio.hero} />
         <SkillsSection data={portfolio.skills} />
-        <ProjectsSection data={portfolio.projects} />
+        <ProjectsSection data={{ ...portfolio.projects, items: projects }} />
         <ExperienceSection data={portfolio.experience} />
         <AboutSection data={portfolio.about} />
         <ContactSection data={portfolio.contact} />

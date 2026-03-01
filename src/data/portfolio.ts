@@ -112,7 +112,7 @@ export const portfolio: PortfolioData = {
   seo: {
     title: "Noureddine Eddallal | Full-Stack Developer",
     description:
-      "Full-Stack Developer with 7+ years of experience. PHP/Laravel, WordPress, JavaScript, and modern web delivery.",
+      "Full-Stack Developer focused on performant web apps and scalable REST APIs. PHP/Laravel + modern JavaScript (React/Vue/Nuxt/Node).",
     canonicalUrl: "https://alucard17h.github.io/my_portfolio/",
   },
   nav: [
@@ -125,15 +125,15 @@ export const portfolio: PortfolioData = {
   hero: {
     headline: "Noureddine Eddallal — Full-Stack Developer",
     subheadline:
-      "7+ years building web solutions with PHP, Laravel, WordPress, and JavaScript—focused on quality, performance, and client satisfaction.",
-    locationLine: "Open to: Remote / On-site • Agadir, Morocco",
+      "PHP/Laravel • JavaScript (React/Vue/Nuxt/Node) • REST APIs • Open to Full-Remote",
+    locationLine: "Open to: Full-Remote • Agadir, Morocco",
     ctas: {
       primary: { label: "View Projects", href: "#projects" },
       secondary: { label: "Contact Me", href: "#contact" },
       downloadCv: { label: "Download CV", href: "/cv.pdf" },
     },
     stats: [
-      { label: "Years Experience", value: "7+" },
+      { label: "Years Experience", value: "10+" },
       { label: "Core Stack", value: "PHP • Laravel • JavaScript" },
       { label: "Frontend", value: "Vue • Nuxt • HTML/CSS" },
     ],
@@ -146,13 +146,13 @@ export const portfolio: PortfolioData = {
           name: "JavaScript + UI Development",
           icon: "code",
           level: 86,
-          highlights: ["Advanced JavaScript", "Responsive UI", "UX quality"],
+          highlights: ["React", "Vue", "MUI / shadcn/ui"],
         },
         {
           name: "Vue.js + Nuxt.js",
           icon: "code",
           level: 78,
-          highlights: ["SPA/SSR", "Component architecture", "Maintainability"],
+          highlights: ["SPA/SSR", "Clean UI", "Maintainability"],
         },
       ],
     },
@@ -163,13 +163,13 @@ export const portfolio: PortfolioData = {
           name: "PHP + Laravel",
           icon: "server",
           level: 88,
-          highlights: ["REST APIs", "Scalable backends", "Security-minded"],
+          highlights: ["REST APIs", "Performance", "Security"],
         },
         {
-          name: "WordPress Development",
+          name: "Node.js + Express.js",
           icon: "server",
-          level: 82,
-          highlights: ["Custom themes/plugins", "Client delivery", "Quality-first"],
+          level: 76,
+          highlights: ["REST APIs", "Integration", "Production delivery"],
         },
       ],
     },
@@ -203,6 +203,12 @@ export const portfolio: PortfolioData = {
           icon: "wrench",
           level: 84,
           highlights: ["HTML", "CSS", "Bootstrap", "jQuery"],
+        },
+        {
+          name: "WordPress",
+          icon: "wrench",
+          level: 80,
+          highlights: ["Themes", "Plugins", "Client projects"],
         },
       ],
     },
@@ -294,13 +300,13 @@ export const portfolio: PortfolioData = {
       },
       {
         title: "Full-Stack Web Developer",
-        org: "Soorcin",
+        org: "Soocrin",
         period: "2022 — 2024",
         location: "",
         achievements: [
           "Collaborated with a team of developers to deliver multiple projects",
-          "Developed and maintained web applications using Laravel, JavaScript, Node.js, Vue.js, Nuxt.js, and Express.js",
-          "Implemented and maintained REST APIs to enhance data retrieval and user experience",
+          "Developed and maintained web applications using Laravel, JavaScript, Node.js, React, Vue.js, Nuxt.js, and Express.js",
+          "Implemented and maintained REST APIs to improve data retrieval and user experience",
           "Worked in Agile environments with daily stand-ups and sprint planning",
         ],
       },
@@ -330,9 +336,9 @@ export const portfolio: PortfolioData = {
   about: {
     heading: "About",
     paragraphs: [
-      "7+ year experienced Web Developer, freelancing with passion for PHP, Laravel, WordPress, and JavaScript.",
-      "I embrace challenges and see problems as gateways. Ambitious and boundary-pushing, I craft top-notch user experiences.",
-      "Client satisfaction drives me. Let’s build something that lasts and makes an impact.",
+      "10-year experienced web developer with a strong focus on building and maintaining performant web applications and scalable REST APIs.",
+      "Experienced across PHP/Laravel, WordPress, and modern JavaScript (React/Vue/Nuxt/Node). Comfortable in Agile teams and remote-first workflows.",
+      "I embrace challenges and treat problems as gateways—ambitious, boundary-pushing, and focused on top-notch user experiences and long-term client satisfaction.",
     ],
     principles: [
       {
@@ -343,12 +349,12 @@ export const portfolio: PortfolioData = {
       {
         title: "Competencies",
         description:
-          "Full Stack Web Development • Framework Proficiency • Advanced JavaScript Development • Quality-oriented delivery",
+          "Remote-ready collaboration • Backend & API-first delivery • Quality-oriented mindset",
       },
       {
         title: "Technologies",
         description:
-          "JavaScript • jQuery • Nuxt.js • Vue.js • PHP • Laravel • WordPress • HTML • CSS • Bootstrap",
+          "PHP • Laravel • JavaScript • Node.js • Express.js • React • Vue.js • Nuxt.js • REST APIs • WordPress • jQuery • HTML • CSS • Bootstrap • MUI • shadcn/ui",
       },
     ],
   },
@@ -360,14 +366,14 @@ export const portfolio: PortfolioData = {
     phone: "+212707673488",
     website: "https://alucard17h.github.io/my_portfolio/",
     socials: [
-      { label: "GitHub", href: "https://github.com/Alucard17h", icon: "github" },
+      { label: "GitHub", href: "https://github.com/Alucard17th", icon: "github" },
       { label: "Email", href: "mailto:eddallal.noureddine@gmail.com", icon: "email" },
     ],
   },
   footer: {
     copyrightName: "Noureddine Eddallal",
     socials: [
-      { label: "GitHub", href: "https://github.com/Alucard17h", icon: "github" },
+      { label: "GitHub", href: "https://github.com/Alucard17th", icon: "github" },
       { label: "Email", href: "mailto:eddallal.noureddine@gmail.com", icon: "email" },
     ],
   },
