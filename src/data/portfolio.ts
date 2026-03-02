@@ -148,7 +148,7 @@ export const portfolio: PortfolioData = {
     stats: [
       { label: "Years Experience", value: "10+" },
       { label: "Core Stack", value: "PHP • Laravel • JavaScript" },
-      { label: "Frontend", value: "Vue • Nuxt • HTML/CSS" },
+      { label: "Frontend", value: "React • Vue • Nuxt • HTML/CSS" },
     ],
   },
   skills: [
