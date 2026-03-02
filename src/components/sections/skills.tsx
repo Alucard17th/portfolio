@@ -26,8 +26,8 @@ export function SkillsSection({ data }: { data: SkillCategory[] }) {
     >
       <div className="grid gap-4 lg:grid-cols-2">
         {data.map((cat, idx) => (
-          <Reveal key={cat.category} delay={0.06 * idx}>
-            <Card className="bg-card/70 backdrop-blur">
+          <Reveal key={cat.category} delay={0.06 * idx} className="h-full">
+            <Card className="h-full bg-card/70 backdrop-blur">
               <CardHeader>
                 <CardTitle className="text-base">{cat.category}</CardTitle>
               </CardHeader>

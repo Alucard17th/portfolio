@@ -96,12 +96,13 @@ export function HeroSection({ data }: { data: HeroData }) {
             <Card className="overflow-hidden border-border bg-card/75">
               <div className="aspect-[4/5] w-full bg-[linear-gradient(135deg,hsl(var(--border)),transparent_60%)]">
                 <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto h-24 w-24 rounded-full border border-border bg-background/60" />
-                    <p className="mt-4 text-sm font-medium">Avatar placeholder</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Replace with your photo
-                    </p>
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/nordin.png"
+                      alt={data.headline}
+                      loading="lazy"
+                      className="h-36 w-36 rounded-2xl border border-border object-cover shadow-sm"
+                    />
                   </div>
                 </div>
               </div>

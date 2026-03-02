@@ -4,6 +4,8 @@ import { CommandPalette } from "./components/navigation/command-palette";
 import { HeroSection } from "./components/sections/hero";
 import { SkillsSection } from "./components/sections/skills";
 import { ProjectsSection } from "./components/sections/projects";
+import { CaseStudySection } from "./components/sections/case-study";
+import { RemoteWorkSection } from "./components/sections/remote";
 import { ExperienceSection } from "./components/sections/experience";
 import { AboutSection } from "./components/sections/about";
 import { ContactSection } from "./components/sections/contact";
@@ -51,6 +53,8 @@ export default function App() {
         <HeroSection data={portfolio.hero} />
         <SkillsSection data={portfolio.skills} />
         <ProjectsSection data={{ ...portfolio.projects, items: projects }} />
+        <CaseStudySection />
+        <RemoteWorkSection data={portfolio.remote} />
         <ExperienceSection data={portfolio.experience} />
         <AboutSection data={portfolio.about} />
         <ContactSection data={portfolio.contact} />

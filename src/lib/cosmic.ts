@@ -26,8 +26,9 @@ function readImageUrl(value: unknown): string | undefined {
   if (!value) return undefined;
   if (typeof value === "string") return value;
   if (typeof value === "object") {
-    const maybeUrl = (value as { url?: unknown }).url;
-    if (typeof maybeUrl === "string") return maybeUrl;
+    const v = value as { url?: unknown; imgix_url?: unknown };
+    if (typeof v.imgix_url === "string") return v.imgix_url;
+    if (typeof v.url === "string") return v.url;
   }
   return undefined;
 }
@@ -59,7 +60,11 @@ export function cosmicObjectToProject(obj: CosmicObject): Project {
       : String(Date.now()));
 
   const name = readString(obj.title) ?? "Untitled project";
-  const tagline = readString(md.tagline) ?? "";
+  const tagline =
+    readString(md.tagline) ??
+    readString(md.subtitle) ??
+    readString(md.summary) ??
+    "";
   const description =
     readString(md.description) ??
     readString(obj.content) ??
@@ -79,11 +84,17 @@ export function cosmicObjectToProject(obj: CosmicObject): Project {
   const tech =
     readStringArray(md.tech).length > 0
       ? readStringArray(md.tech)
-      : readStringArray(md.stack);
+      : readStringArray(md.stack).length > 0
+        ? readStringArray(md.stack)
+        : readStringArray((md as { technologies?: unknown }).technologies);
 
   const links = {
     github: readString(md.github) ?? readString(md.githubUrl),
-    live: readString(md.live) ?? readString(md.liveUrl) ?? readString(md.demo),
+    live:
+      readString(md.live) ??
+      readString(md.liveUrl) ??
+      readString(md.demo) ??
+      readString((md as { url?: unknown }).url),
     caseStudy: readString(md.caseStudy) ?? readString(md.caseStudyUrl),
   };
 

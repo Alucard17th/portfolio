@@ -29,7 +29,7 @@ export function Navbar() {
         >
           <span className="relative flex h-7 w-7 items-center justify-center rounded-md border border-border bg-card text-xs font-bold">
             <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
-              FS
+              NE
             </span>
           </span>
           <span className="hidden sm:inline">Noureddine Eddallal</span>
@@ -73,7 +73,10 @@ export function Navbar() {
                   <Menu className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent
+                align="end"
+                className="w-56 !bg-[hsl(var(--popover))] opacity-100 backdrop-blur-none"
+              >
                 {portfolio.nav.map((item) => (
                   <DropdownMenuItem
                     key={item.href}

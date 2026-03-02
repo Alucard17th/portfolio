@@ -78,6 +78,16 @@ export type ContactData = {
   socials: SocialLink[];
 };
 
+export type RemoteWorkData = {
+  heading: string;
+  blurb: string;
+  timezone: string;
+  availability: string;
+  englishLevel: string;
+  tools: string[];
+  workStyle: string[];
+};
+
 export type FooterData = {
   copyrightName: string;
   socials: SocialLink[];
@@ -103,6 +113,7 @@ export type PortfolioData = {
     heading: string;
     items: ExperienceItem[];
   };
+  remote: RemoteWorkData;
   about: AboutData;
   contact: ContactData;
   footer: FooterData;
@@ -118,6 +129,8 @@ export const portfolio: PortfolioData = {
   nav: [
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
+    { label: "Case Study", href: "#case-study" },
+    { label: "Remote", href: "#remote" },
     { label: "Experience", href: "#experience" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
@@ -282,11 +295,33 @@ export const portfolio: PortfolioData = {
       },
     ],
   },
+  remote: {
+    heading: "How I work remotely",
+    blurb:
+      "I’m comfortable in remote-first environments with async-friendly workflows, clear communication, and reliable delivery.",
+    timezone: "GMT+0 (Morocco)",
+    availability: "Flexible hours",
+    englishLevel: "Professional working proficiency",
+    tools: [
+      "GitHub",
+      "GitLab",
+      "Microsoft Teams",
+      "Asana",
+      "Google Drive",
+      "Windsurf (AI IDE)",
+    ],
+    workStyle: [
+      "Async-first communication",
+      "Clear PRs and code reviews",
+      "Documentation habits (setup, decisions, handoffs)",
+      "Ownership mindset and predictable delivery",
+    ],
+  },
   experience: {
     heading: "Experience",
     items: [
       {
-        title: "Project Manager & Backend Developer",
+        title: "Project Manager & Full-Stack Developer",
         org: "Jobase",
         period: "2024",
         location: "",
@@ -367,6 +402,11 @@ export const portfolio: PortfolioData = {
     website: "https://alucard17h.github.io/my_portfolio/",
     socials: [
       { label: "GitHub", href: "https://github.com/Alucard17th", icon: "github" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/noureddine-eddallal-03aba3182/",
+        icon: "linkedin",
+      },
       { label: "Email", href: "mailto:eddallal.noureddine@gmail.com", icon: "email" },
     ],
   },
@@ -374,6 +414,11 @@ export const portfolio: PortfolioData = {
     copyrightName: "Noureddine Eddallal",
     socials: [
       { label: "GitHub", href: "https://github.com/Alucard17th", icon: "github" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/noureddine-eddallal-03aba3182/",
+        icon: "linkedin",
+      },
       { label: "Email", href: "mailto:eddallal.noureddine@gmail.com", icon: "email" },
     ],
   },
