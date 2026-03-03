@@ -143,7 +143,10 @@ export const portfolio: PortfolioData = {
     ctas: {
       primary: { label: "View Projects", href: "#projects" },
       secondary: { label: "Contact Me", href: "#contact" },
-      downloadCv: { label: "Download CV", href: "/cv.pdf" },
+      downloadCv: {
+        label: "Download CV",
+        href: "/Noureddine%20Eddallal%20_%20Full-Stack%20Developer_eng.pdf",
+      },
     },
     stats: [
       { label: "Years Experience", value: "10+" },
