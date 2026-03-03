@@ -10,6 +10,7 @@ import { Reveal } from "@/components/motion/reveal";
 
 export function HeroSection({ data }: { data: HeroData }) {
   const cvHref = `${import.meta.env.BASE_URL}${data.ctas.downloadCv.href.replace(/^\//, "")}`;
+  const avatarSrc = `${import.meta.env.BASE_URL}nordin.png`;
 
   return (
     <section id="top" className="relative pb-8 pt-10 sm:pt-12">
@@ -100,7 +101,7 @@ export function HeroSection({ data }: { data: HeroData }) {
                 <div className="flex h-full w-full items-center justify-center">
                   <div className="flex flex-col items-center">
                     <img
-                      src="/nordin.png"
+                      src={avatarSrc}
                       alt={data.headline}
                       loading="lazy"
                       className="h-36 w-36 rounded-2xl border border-border object-cover shadow-sm"
