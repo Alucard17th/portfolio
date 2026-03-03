@@ -9,6 +9,8 @@ import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/motion/reveal";
 
 export function HeroSection({ data }: { data: HeroData }) {
+  const cvHref = `${import.meta.env.BASE_URL}${data.ctas.downloadCv.href.replace(/^\//, "")}`;
+
   return (
     <section id="top" className="relative pb-8 pt-10 sm:pt-12">
       <div className="grid items-center gap-8 md:grid-cols-[1.35fr_0.65fr]">
@@ -62,7 +64,7 @@ export function HeroSection({ data }: { data: HeroData }) {
                 variant="secondary"
                 className="border border-border"
               >
-                <a href={data.ctas.downloadCv.href} download>
+                <a href={cvHref} download>
                   <Download className="h-4 w-4" />
                   {data.ctas.downloadCv.label}
                 </a>
