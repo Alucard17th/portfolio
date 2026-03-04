@@ -18,9 +18,10 @@ export function ContactSection({ data }: { data: ContactData }) {
   return (
     <SectionShell
       id="contact"
-      eyebrow="Let’s talk"
+      eyebrow="Let’s build"
       title={data.heading}
       description={data.blurb}
+      icon={<Mail className="h-5 w-5" />}
     >
       <Reveal>
         <Card className="bg-card/70 backdrop-blur">

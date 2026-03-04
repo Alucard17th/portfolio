@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, FolderGit2, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
 import type { PortfolioData, Project } from "@/data/portfolio";
@@ -41,6 +41,7 @@ export function ProjectsSection({ data }: { data: PortfolioData["projects"] }) {
       eyebrow="Proof of work"
       title={data.heading}
       description={data.subheading}
+      icon={<FolderGit2 className="h-5 w-5" />}
     >
       <div className="flex flex-col gap-5">
         <div className="flex flex-wrap items-center justify-between gap-3">

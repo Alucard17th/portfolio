@@ -1,4 +1,4 @@
-import { Cloud, Code, Database, Server, Wrench } from "lucide-react";
+import { Cloud, Code, Database, Sparkles, Server, Wrench } from "lucide-react";
 
 import type { SkillCategory } from "@/data/portfolio";
 
@@ -23,6 +23,7 @@ export function SkillsSection({ data }: { data: SkillCategory[] }) {
       eyebrow="What I use to ship"
       title="Skills"
       description="A clear snapshot of strengths across the stack—optimized for recruiter scanning."
+      icon={<Sparkles className="h-5 w-5" />}
     >
       <div className="grid gap-4 lg:grid-cols-2">
         {data.map((cat, idx) => (

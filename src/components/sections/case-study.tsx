@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { BookOpenCheck } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -16,6 +17,7 @@ export function CaseStudySection() {
       eyebrow="Flagship case study"
       title="TellyHealth Frontend"
       description="Production-grade internal web app for healthcare operations: scheduling, patient/provider management, tasks/cases/calls, and permission-gated workflows."
+      icon={<BookOpenCheck className="h-5 w-5" />}
     >
       <div className="grid gap-4 lg:grid-cols-2">
         <Reveal className="h-full">

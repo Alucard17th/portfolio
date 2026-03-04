@@ -1,4 +1,5 @@
 import type { AboutData } from "@/data/portfolio";
+import { User } from "lucide-react";
 
 import { SectionShell } from "@/components/sections/section-shell";
 import { Reveal } from "@/components/motion/reveal";
@@ -8,8 +9,9 @@ export function AboutSection({ data }: { data: AboutData }) {
   return (
     <SectionShell
       id="about"
-      eyebrow="How I think"
+      eyebrow="A bit about me"
       title={data.heading}
+      icon={<User className="h-5 w-5" />}
       description="A concise story that communicates clarity, ownership, and impact."
     >
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">

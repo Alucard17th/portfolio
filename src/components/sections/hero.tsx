@@ -121,12 +121,6 @@ export function HeroSection({ data }: { data: HeroData }) {
           </motion.div>
         </Reveal>
       </div>
-
-      <div className="mt-8 flex items-center gap-3 text-xs text-muted-foreground">
-        <span className="h-px flex-1 bg-border" />
-        <span>Scroll</span>
-        <span className="h-px flex-1 bg-border" />
-      </div>
     </section>
   );
 }

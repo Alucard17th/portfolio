@@ -1,5 +1,7 @@
 import type { RemoteWorkData } from "@/data/portfolio";
 
+import { Globe } from "lucide-react";
+
 import { Reveal } from "@/components/motion/reveal";
 import { SectionShell } from "@/components/sections/section-shell";
 import {
@@ -22,6 +24,7 @@ export function RemoteWorkSection({
       eyebrow="Remote-ready"
       title={data.heading}
       description={data.blurb}
+      icon={<Globe className="h-5 w-5" />}
     >
       <div className="grid gap-4 lg:grid-cols-2">
         <Reveal className="h-full">

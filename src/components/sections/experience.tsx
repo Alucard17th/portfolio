@@ -1,4 +1,5 @@
 import type { PortfolioData } from "@/data/portfolio";
+import { Briefcase } from "lucide-react";
 
 import { SectionShell } from "@/components/sections/section-shell";
 import { Reveal } from "@/components/motion/reveal";
@@ -12,8 +13,9 @@ export function ExperienceSection({
   return (
     <SectionShell
       id="experience"
-      eyebrow="Trust signals"
+      eyebrow="Career"
       title={data.heading}
+      icon={<Briefcase className="h-5 w-5" />}
       description="A results-first timeline highlighting measurable outcomes."
     >
       <div className="relative">
