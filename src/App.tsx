@@ -40,10 +40,21 @@ export default function App() {
 
   return (
     <div className="min-h-dvh bg-background text-foreground">
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,hsl(var(--ring)/0.14),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_80%_30%,hsl(var(--accent-foreground)/0.10),transparent_55%)]" />
-        <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] [background-size:56px_56px]" />
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute -left-[10%] top-[-15%] h-[55vh] w-[55vh] rounded-full opacity-60 blur-3xl animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-1) / 0.45), transparent)" }}
+        />
+        <div
+          className="absolute right-[-10%] top-[10%] h-[50vh] w-[50vh] rounded-full opacity-50 blur-3xl animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-2) / 0.40), transparent)", animationDelay: "-7s" }}
+        />
+        <div
+          className="absolute left-[20%] bottom-[-20%] h-[60vh] w-[60vh] rounded-full opacity-40 blur-3xl animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-3) / 0.30), transparent)", animationDelay: "-14s" }}
+        />
+        <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
+        <div className="absolute inset-0 noise opacity-[0.35] mix-blend-overlay" />
       </div>
 
       <Navbar />

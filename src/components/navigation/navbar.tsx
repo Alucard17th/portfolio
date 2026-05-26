@@ -64,39 +64,47 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/55">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/40">
       <ScrollProgress />
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <button
           type="button"
           onClick={() => onNav("#top")}
-          className="group inline-flex items-center gap-2 rounded-md px-2 py-1 text-sm font-semibold tracking-tight hover:bg-accent"
+          className="group inline-flex items-center gap-2.5 rounded-md px-2 py-1 text-sm font-semibold tracking-tight"
         >
-          <span className="relative flex h-7 w-7 items-center justify-center rounded-md border border-border bg-card text-xs font-bold">
-            <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg ring-gradient bg-card text-xs font-bold">
+            <span className="bg-gradient-to-br from-[hsl(var(--grad-1))] via-[hsl(var(--grad-2))] to-[hsl(var(--grad-3))] bg-clip-text text-transparent">
               NE
             </span>
           </span>
-          <span className="hidden sm:inline">Noureddine Eddallal</span>
+          <span className="hidden sm:inline transition group-hover:text-foreground">
+            Noureddine<span className="text-muted-foreground">.dev</span>
+          </span>
           <span className="sr-only">Go to top</span>
         </button>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-          {portfolio.nav.map((item) => (
-            <Button
-              key={item.href}
-              type="button"
-              variant="ghost"
-              className={
-                item.href === active
-                  ? "text-sm bg-accent text-foreground"
-                  : "text-sm text-muted-foreground hover:text-foreground"
-              }
-              onClick={() => onNav(item.href)}
-            >
-              {item.label}
-            </Button>
-          ))}
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary">
+          {portfolio.nav.map((item) => {
+            const isActive = item.href === active;
+            return (
+              <button
+                key={item.href}
+                type="button"
+                onClick={() => onNav(item.href)}
+                className={
+                  "relative inline-flex h-9 cursor-pointer items-center rounded-md px-3 text-sm transition-colors hover:bg-accent/40 " +
+                  (isActive
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground")
+                }
+              >
+                {item.label}
+                {isActive ? (
+                  <span className="absolute inset-x-3 -bottom-px h-px bg-gradient-to-r from-transparent via-[hsl(var(--grad-2))] to-transparent" />
+                ) : null}
+              </button>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
