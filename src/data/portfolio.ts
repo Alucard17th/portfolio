@@ -18,7 +18,8 @@ export type HeroData = {
     secondary: { label: string; href: `#${string}` };
     downloadCv: { label: string; href: string };
   };
-  stats: Array<{ label: string; value: string }>; 
+  stats: Array<{ label: string; value: string }>;
+  dailyStack: string[];
 };
 
 export type SkillCategory = {
@@ -66,6 +67,7 @@ export type ExperienceItem = {
 export type AboutData = {
   heading: string;
   paragraphs: string[];
+  metrics: Array<{ value: string; label: string }>;
   principles: Array<{ title: string; description: string }>;
 };
 
@@ -152,6 +154,20 @@ export const portfolio: PortfolioData = {
       { label: "Years Experience", value: "10+" },
       { label: "Core Stack", value: "PHP • Laravel • JavaScript" },
       { label: "Frontend", value: "React • Vue • Nuxt • HTML/CSS" },
+    ],
+    dailyStack: [
+      "PHP",
+      "Laravel",
+      "TypeScript",
+      "React",
+      "Vue",
+      "Nuxt",
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "PostgreSQL",
+      "Tailwind",
+      "Docker",
     ],
   },
   skills: [
@@ -373,6 +389,11 @@ export const portfolio: PortfolioData = {
   },
   about: {
     heading: "About",
+    metrics: [
+      { value: "10+", label: "Years coding" },
+      { value: "50+", label: "Projects shipped" },
+      { value: "3", label: "Countries served" },
+    ],
     paragraphs: [
       "10-year experienced web developer with a strong focus on building and maintaining performant web applications and scalable REST APIs.",
       "Experienced across PHP/Laravel, WordPress, and modern JavaScript (React/Vue/Nuxt/Node). Comfortable in Agile teams and remote-first workflows.",

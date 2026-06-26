@@ -37,11 +37,10 @@ export function ContactSection({ data }: { data: ContactData }) {
       align="center"
     >
       <Reveal>
-        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border/70 bg-card/50 p-8 backdrop-blur-xl sm:p-10">
+        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-[hsl(var(--lime)/0.2)] bg-card/50 p-8 backdrop-blur-xl sm:p-10">
           {/* glow */}
-          <div className="pointer-events-none absolute -inset-px rounded-3xl ring-gradient" />
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-accent opacity-15 blur-3xl" />
-          <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-gradient-accent opacity-10 blur-3xl" />
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(var(--lime)/0.08)] blur-3xl" />
+          <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-[hsl(var(--orange)/0.07)] blur-3xl" />
 
           <div className="relative flex flex-col items-center text-center">
             <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -52,16 +51,13 @@ export function ContactSection({ data }: { data: ContactData }) {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-accent text-white shadow-[0_10px_40px_-12px_hsl(var(--grad-1)/0.55)] hover:opacity-95"
+              <a
+                href={`mailto:${data.email}`}
+                className="inline-flex h-11 items-center gap-2 rounded-full bg-[hsl(var(--lime))] px-6 text-sm font-semibold text-[hsl(228_35%_5%)] shadow-[0_8px_32px_-8px_hsl(var(--lime)/0.45)] transition hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_hsl(var(--lime)/0.6)]"
               >
-                <a href={`mailto:${data.email}`}>
-                  <Mail className="h-4 w-4" />
-                  Send an email
-                </a>
-              </Button>
+                <Mail className="h-4 w-4" />
+                Send an email
+              </a>
               <Button
                 type="button"
                 size="lg"
@@ -103,7 +99,7 @@ export function ContactSection({ data }: { data: ContactData }) {
                     href={s.href}
                     target={isMail ? undefined : "_blank"}
                     rel={isMail ? undefined : "noreferrer"}
-                    className="group inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/40 px-4 py-2 text-sm font-medium backdrop-blur transition hover:-translate-y-0.5 hover:border-[hsl(var(--grad-2)/0.6)]"
+                    className="group inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/40 px-4 py-2 text-sm font-medium backdrop-blur transition hover:-translate-y-0.5 hover:border-[hsl(var(--lime)/0.5)]"
                   >
                     <Icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-foreground" />
                     {s.label}

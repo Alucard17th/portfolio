@@ -64,20 +64,19 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/40">
+    <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/50">
       <ScrollProgress />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        {/* Logo */}
         <button
           type="button"
           onClick={() => onNav("#top")}
-          className="group inline-flex items-center gap-2.5 rounded-md px-2 py-1 text-sm font-semibold tracking-tight"
+          className="group inline-flex items-center gap-2.5 rounded-md px-1 py-1 text-sm font-semibold tracking-tight"
         >
-          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg ring-gradient bg-card text-xs font-bold">
-            <span className="bg-gradient-to-br from-[hsl(var(--grad-1))] via-[hsl(var(--grad-2))] to-[hsl(var(--grad-3))] bg-clip-text text-transparent">
-              NE
-            </span>
+          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-[hsl(var(--lime))] text-[11px] font-bold text-[hsl(228_35%_5%)] shadow-[0_0_16px_hsl(var(--lime)/0.4)]">
+            NE
           </span>
-          <span className="hidden sm:inline transition group-hover:text-foreground">
+          <span className="hidden sm:inline text-foreground/80 transition group-hover:text-foreground">
             Noureddine<span className="text-muted-foreground">.dev</span>
           </span>
           <span className="sr-only">Go to top</span>
@@ -92,15 +91,15 @@ export function Navbar() {
                 type="button"
                 onClick={() => onNav(item.href)}
                 className={
-                  "relative inline-flex h-9 cursor-pointer items-center rounded-md px-3 text-sm transition-colors hover:bg-accent/40 " +
+                  "relative inline-flex h-9 cursor-pointer items-center rounded-md px-3.5 text-sm transition-colors " +
                   (isActive
-                    ? "text-foreground"
+                    ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground")
                 }
               >
                 {item.label}
                 {isActive ? (
-                  <span className="absolute inset-x-3 -bottom-px h-px bg-gradient-to-r from-transparent via-[hsl(var(--grad-2))] to-transparent" />
+                  <span className="absolute inset-x-3 -bottom-px h-px bg-[hsl(var(--lime))]" />
                 ) : null}
               </button>
             );
@@ -111,12 +110,12 @@ export function Navbar() {
           <Button
             type="button"
             variant="outline"
-            className="hidden h-9 gap-2 px-3 md:inline-flex"
+            className="hidden h-9 gap-2 px-3 md:inline-flex border-border/60"
             onClick={() => window.dispatchEvent(new CustomEvent("portfolio:open-command"))}
           >
             <Search className="h-4 w-4" />
             <span>Quick nav</span>
-            <span className="ml-2 rounded border border-border bg-card px-1.5 py-0.5 text-xs text-muted-foreground">
+            <span className="ml-2 rounded border border-border bg-card px-1.5 py-0.5 text-xs text-muted-foreground font-mono-custom">
               Ctrl K
             </span>
           </Button>

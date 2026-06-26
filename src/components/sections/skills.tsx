@@ -37,11 +37,11 @@ export function SkillsSection({ data }: { data: SkillCategory[] }) {
           const CatIcon = categoryIcon[cat.category];
           return (
             <Reveal key={cat.category} delay={0.06 * idx} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/50 p-6 backdrop-blur-xl transition-colors hover:border-[hsl(var(--grad-2)/0.45)]">
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-gradient-accent opacity-[0.08] blur-2xl transition-opacity duration-500 group-hover:opacity-20" />
+              <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/50 p-6 backdrop-blur-xl transition-colors hover:border-[hsl(var(--lime)/0.35)]">
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[hsl(var(--lime)/0.15)] blur-2xl transition-opacity duration-500 group-hover:opacity-[0.25]" />
 
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl ring-gradient bg-card text-foreground">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[hsl(var(--lime)/0.3)] bg-[hsl(var(--lime)/0.08)] text-[hsl(var(--lime))]">
                     <CatIcon className="h-4 w-4" />
                   </span>
                   <div>
@@ -103,13 +103,13 @@ function GradientProgress({ value }: { value: number }) {
   return (
     <div
       ref={ref}
-      className="relative h-1.5 w-full overflow-hidden rounded-full bg-secondary/60"
+      className="relative h-1 w-full overflow-hidden rounded-full bg-secondary/60"
     >
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: inView ? `${value}%` : 0 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative h-full rounded-full bg-gradient-accent"
+        className="relative h-full rounded-full bg-[hsl(var(--lime))]"
       >
         <span className="absolute inset-0 shimmer rounded-full" />
       </motion.div>

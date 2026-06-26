@@ -13,7 +13,7 @@ export function ScrollProgress() {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left bg-[linear-gradient(to_right,hsl(var(--primary)/0.0),hsl(var(--primary)/0.55),hsl(var(--ring)/0.35),hsl(var(--primary)/0.0))]"
+      className="pointer-events-none absolute inset-x-0 top-0 h-[2px] origin-left bg-[hsl(var(--lime))] shadow-[0_0_8px_hsl(var(--lime)/0.7)]"
       style={{
         scaleX: prefersReducedMotion ? scrollYProgress : scaleX,
       }}

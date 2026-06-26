@@ -43,9 +43,13 @@ export function ProjectsSection({ data }: { data: PortfolioData["projects"] }) {
       <div className="flex flex-col gap-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Tabs value={filter} onValueChange={setFilter}>
-            <TabsList className="flex flex-wrap justify-start bg-card/50 backdrop-blur">
+            <TabsList className="flex flex-wrap justify-start gap-1 rounded-full border border-border/60 bg-card/40 p-1 backdrop-blur">
               {techOptions.slice(0, 7).map((t) => (
-                <TabsTrigger key={t} value={t} className="cursor-pointer">
+                <TabsTrigger
+                  key={t}
+                  value={t}
+                  className="cursor-pointer rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground transition-all data-[state=active]:bg-[hsl(var(--lime))] data-[state=active]:text-[hsl(228_35%_5%)] data-[state=active]:shadow-[0_2px_12px_hsl(var(--lime)/0.4)] data-[state=active]:font-semibold hover:text-foreground"
+                >
                   {t}
                 </TabsTrigger>
               ))}
@@ -103,14 +107,14 @@ function ProjectCard({
         onMouseMove={onMouseMove}
         whileHover={{ y: -4 }}
         transition={{ type: "spring", stiffness: 260, damping: 24 }}
-        className="group relative overflow-hidden rounded-3xl border border-border/70 bg-card/40 backdrop-blur-xl transition-colors hover:border-[hsl(var(--grad-2)/0.5)]"
+        className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 backdrop-blur-xl transition-colors hover:border-[hsl(var(--lime)/0.4)]"
       >
         {/* Cursor-follow spotlight */}
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{
             background:
-              "radial-gradient(450px circle at var(--mx,50%) var(--my,50%), hsl(var(--grad-1)/0.14), transparent 50%)",
+              "radial-gradient(450px circle at var(--mx,50%) var(--my,50%), hsl(var(--lime)/0.09), transparent 50%)",
           }}
         />
 
@@ -176,7 +180,7 @@ function ProjectCard({
                     {project.name}
                   </span>
                 </h3>
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/40 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[hsl(var(--grad-2)/0.6)] group-hover:text-foreground">
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/40 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[hsl(var(--lime)/0.6)] group-hover:text-[hsl(var(--lime))]">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
@@ -219,15 +223,15 @@ function ProjectCard({
             {/* CTAs */}
             <div className="mt-auto flex flex-wrap gap-2 pt-2">
               {project.links.live ? (
-                <Button
-                  asChild
-                  className="cursor-pointer bg-gradient-accent text-white shadow-[0_10px_30px_-12px_hsl(var(--grad-1)/0.55)] hover:opacity-95"
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-9 items-center gap-2 rounded-full bg-[hsl(var(--lime))] px-5 text-sm font-semibold text-[hsl(228_35%_5%)] shadow-[0_6px_20px_-6px_hsl(var(--lime)/0.45)] transition hover:-translate-y-0.5"
                 >
-                  <a href={project.links.live} target="_blank" rel="noreferrer">
-                    <ExternalLink className="h-4 w-4" />
-                    View live
-                  </a>
-                </Button>
+                  <ExternalLink className="h-4 w-4" />
+                  View live
+                </a>
               ) : null}
               {project.links.github ? (
                 <Button asChild variant="outline" className="cursor-pointer backdrop-blur">

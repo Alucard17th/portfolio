@@ -18,20 +18,6 @@ import { portfolio } from "@/data/portfolio";
 
 import { Button } from "@/components/ui/button";
 
-const TECH_STACK = [
-  "PHP",
-  "Laravel",
-  "TypeScript",
-  "React",
-  "Vue",
-  "Nuxt",
-  "Node.js",
-  "Express",
-  "REST APIs",
-  "PostgreSQL",
-  "Tailwind",
-  "Docker",
-];
 
 export function HeroSection({ data }: { data: HeroData }) {
   const reduceMotion = useReducedMotion();
@@ -43,8 +29,8 @@ export function HeroSection({ data }: { data: HeroData }) {
   const linkedinHref = socials.find((s) => s.icon === "linkedin")?.href;
 
   return (
-    <section id="top" className="relative pt-10 pb-16 sm:pt-16 sm:pb-24">
-      <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+    <section id="top" className="relative pt-12 pb-16 sm:pt-20 sm:pb-28">
+      <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         {/* LEFT — copy */}
         <div className="relative">
           {/* Status pill */}
@@ -52,36 +38,37 @@ export function HeroSection({ data }: { data: HeroData }) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur"
+            className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--lime)/0.3)] bg-[hsl(var(--lime)/0.07)] px-3 py-1.5 text-xs font-medium text-[hsl(var(--lime))]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inset-0 rounded-full bg-emerald-400 animate-pulse-ring" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="absolute inset-0 rounded-full bg-[hsl(var(--lime))] animate-pulse-ring" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[hsl(var(--lime))]" />
             </span>
             Available for full-remote roles
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — DM Serif Display, italic, big */}
           <motion.h1
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="mt-5 text-balance text-[40px] font-semibold leading-[1.05] tracking-tight sm:text-[56px] lg:text-[64px]"
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.07 }}
+            className="font-display mt-5 text-balance italic leading-[1.06] tracking-tight text-[42px] sm:text-[60px] lg:text-[72px]"
           >
             Building{" "}
-            <span className="text-gradient">performant web apps</span>{" "}
-            <span className="text-muted-foreground/70">&</span>{" "}
-            <span className="text-gradient">scalable APIs</span>.
+            <em className="not-italic text-gradient">performant</em>{" "}
+            <br className="hidden sm:block" />
+            web apps &{" "}
+            <em className="not-italic text-gradient">scalable APIs.</em>
           </motion.h1>
 
           {/* Subhead */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
-            className="mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-[17px]"
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.18 }}
+            className="mt-6 max-w-lg text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-[17px]"
           >
-            I'm <span className="font-medium text-foreground">Noureddine Eddallal</span> — a
+            I'm <span className="font-semibold text-foreground">Noureddine Eddallal</span> — a
             full-stack developer with 10+ years shipping production software in PHP/Laravel
             and modern JavaScript (React, Vue, Nuxt, Node).
           </motion.p>
@@ -90,68 +77,61 @@ export function HeroSection({ data }: { data: HeroData }) {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.22 }}
-            className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground"
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
+            className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground font-mono-custom"
           >
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-1 w-1 rounded-full bg-muted-foreground/60" />
-              Agadir, Morocco · GMT+0
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-1 w-1 rounded-full bg-muted-foreground/60" />
-              Full-remote · Flexible hours
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-1 w-1 rounded-full bg-muted-foreground/60" />
-              Async-friendly
-            </span>
+            <span>Agadir, Morocco · GMT+0</span>
+            <span className="h-3 w-px bg-border" />
+            <span>Full-remote · Flexible hours</span>
+            <span className="h-3 w-px bg-border" />
+            <span>Async-friendly</span>
           </motion.div>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut", delay: 0.3 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.33 }}
+            className="mt-9 flex flex-wrap items-center gap-3"
           >
-            <Button
+            {/* Primary CTA — lime fill */}
+            <button
               type="button"
-              size="lg"
               onClick={() => scrollToHash(data.ctas.primary.href)}
-              className="group relative overflow-hidden bg-gradient-accent text-white shadow-[0_10px_40px_-12px_hsl(var(--grad-1)/0.55)] hover:opacity-95"
+              className="group relative inline-flex h-11 items-center gap-2 overflow-hidden rounded-full bg-[hsl(var(--lime))] px-6 text-sm font-semibold text-[hsl(228_35%_5%)] shadow-[0_8px_32px_-8px_hsl(var(--lime)/0.5)] transition-all hover:shadow-[0_12px_40px_-8px_hsl(var(--lime)/0.65)] hover:-translate-y-0.5 active:translate-y-0"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                {data.ctas.primary.label}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
-              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-            </Button>
+              {data.ctas.primary.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-600 group-hover:translate-x-full" />
+            </button>
 
-            <Button
+            {/* Secondary CTA — outline */}
+            <button
               type="button"
-              variant="outline"
-              size="lg"
               onClick={() => scrollToHash(data.ctas.secondary.href)}
-              className="backdrop-blur"
+              className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-card/50 px-6 text-sm font-medium text-foreground backdrop-blur transition hover:border-[hsl(var(--lime)/0.5)] hover:bg-card/80 hover:-translate-y-0.5"
             >
               <Mail className="h-4 w-4" />
               {data.ctas.secondary.label}
-            </Button>
+            </button>
 
-            <Button asChild type="button" variant="ghost" size="lg">
-              <a href={cvHref} download className="group">
-                <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-                {data.ctas.downloadCv.label}
-              </a>
-            </Button>
+            {/* CV download — ghost */}
+            <a
+              href={cvHref}
+              download
+              className="group inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+            >
+              <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              {data.ctas.downloadCv.label}
+            </a>
           </motion.div>
 
           {/* Socials */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 flex items-center gap-2"
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-7 flex items-center gap-2"
           >
             {githubHref ? (
               <SocialIcon href={githubHref} label="GitHub">
@@ -168,23 +148,20 @@ export function HeroSection({ data }: { data: HeroData }) {
             </SocialIcon>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats — minimal, mono numbers */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-            className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3"
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.55 }}
+            className="mt-10 flex flex-wrap gap-6"
           >
             {data.stats.map((s) => (
-              <div
-                key={s.label}
-                className="ring-gradient rounded-xl bg-card/40 p-4 backdrop-blur transition hover:bg-card/70"
-              >
-                <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                  {s.label}
-                </p>
-                <p className="mt-1 text-base font-semibold tracking-tight">
+              <div key={s.label} className="min-w-[90px]">
+                <p className="font-mono-custom text-2xl font-medium text-[hsl(var(--lime))] sm:text-3xl">
                   {s.value}
+                </p>
+                <p className="mt-0.5 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
+                  {s.label}
                 </p>
               </div>
             ))}
@@ -193,42 +170,42 @@ export function HeroSection({ data }: { data: HeroData }) {
 
         {/* RIGHT — avatar card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          className="relative mx-auto w-full max-w-md"
+          initial={{ opacity: 0, scale: 0.95, y: 16 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.22 }}
+          className="relative mx-auto w-full max-w-[380px]"
         >
-          {/* Outer glow */}
-          <div className="absolute -inset-8 -z-10 rounded-[36px] bg-gradient-accent opacity-30 blur-3xl" />
+          {/* Glow behind card */}
+          <div className="absolute -inset-6 -z-10 rounded-[36px] bg-[hsl(var(--lime)/0.12)] blur-3xl" />
 
           {/* Floating chips */}
           {!reduceMotion && (
             <>
               <FloatChip
-                className="absolute -left-6 top-10 hidden sm:flex"
+                className="absolute -left-8 top-12 hidden sm:flex"
                 delay={0}
-                icon={<Code2 className="h-3.5 w-3.5 text-[hsl(var(--grad-1))]" />}
+                icon={<Code2 className="h-3.5 w-3.5 text-[hsl(var(--lime))]" />}
                 label="React • Vue"
               />
               <FloatChip
-                className="absolute -right-4 top-28 hidden sm:flex"
-                delay={1.5}
-                icon={<Server className="h-3.5 w-3.5 text-[hsl(var(--grad-2))]" />}
+                className="absolute -right-6 top-24 hidden sm:flex"
+                delay={1.8}
+                icon={<Server className="h-3.5 w-3.5 text-[hsl(var(--orange))]" />}
                 label="Laravel • Node"
               />
               <FloatChip
-                className="absolute -right-6 bottom-32 hidden sm:flex"
-                delay={3}
-                icon={<Database className="h-3.5 w-3.5 text-[hsl(var(--grad-3))]" />}
+                className="absolute -right-8 bottom-28 hidden sm:flex"
+                delay={3.5}
+                icon={<Database className="h-3.5 w-3.5 text-[hsl(var(--blue-code))]" />}
                 label="REST APIs"
               />
             </>
           )}
 
-          <div className="ring-gradient relative overflow-hidden rounded-3xl bg-card/60 p-2 backdrop-blur-xl glow-soft">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[radial-gradient(circle_at_30%_20%,hsl(var(--grad-1)/0.18),transparent_55%),radial-gradient(circle_at_75%_75%,hsl(var(--grad-2)/0.18),transparent_55%)]">
-              {/* Grid texture */}
-              <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] [background-size:28px_28px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-[hsl(var(--lime)/0.2)] bg-card/70 p-2 backdrop-blur-xl glow-soft">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[hsl(var(--card))]">
+              {/* Subtle dot grid inside card */}
+              <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle,hsl(var(--foreground))_1px,transparent_1px)] [background-size:20px_20px]" />
 
               {/* Avatar */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -237,34 +214,34 @@ export function HeroSection({ data }: { data: HeroData }) {
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   className="relative"
                 >
-                  <div className="absolute -inset-4 rounded-full bg-gradient-accent opacity-40 blur-2xl" />
+                  {/* Lime glow behind avatar */}
+                  <div className="absolute -inset-5 rounded-full bg-[hsl(var(--lime)/0.25)] blur-2xl" />
                   <img
                     src={avatarSrc}
                     alt={data.headline}
                     loading="eager"
-                    className="relative h-44 w-44 rounded-2xl border border-border/80 object-cover shadow-2xl"
+                    className="relative h-48 w-48 rounded-2xl border-2 border-[hsl(var(--lime)/0.4)] object-cover shadow-2xl"
                   />
                 </motion.div>
               </div>
 
               {/* Bottom badge */}
-              <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl border border-border/70 bg-background/70 px-3 py-2 text-[11px] backdrop-blur">
+              <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl border border-border/50 bg-background/80 px-3 py-2 text-[11px] backdrop-blur">
                 <span className="flex items-center gap-1.5 font-medium">
-                  <Sparkles className="h-3 w-3 text-[hsl(var(--grad-2))]" />
+                  <Sparkles className="h-3 w-3 text-[hsl(var(--lime))]" />
                   10+ yrs full-stack
                 </span>
-                <span className="text-muted-foreground">v2026</span>
+                <span className="font-mono-custom text-muted-foreground">2026</span>
               </div>
             </div>
 
             {/* Card footer */}
             <div className="px-3 pt-3 pb-2">
-              <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                Currently
+              <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
+                Currently at
               </p>
-              <p className="mt-0.5 text-sm">
-                Building production telehealth dashboards & APIs at{" "}
-                <span className="font-medium">Jobase</span>.
+              <p className="mt-0.5 text-sm font-medium text-foreground">
+                Jobase — telehealth dashboards & APIs
               </p>
             </div>
           </div>
@@ -275,20 +252,20 @@ export function HeroSection({ data }: { data: HeroData }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative mt-16 overflow-hidden"
+        transition={{ duration: 0.8, delay: 0.65 }}
+        className="relative mt-20 overflow-hidden"
       >
-        <p className="mb-4 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          Stack I work with daily
+        <p className="mb-5 text-center text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+          Daily stack
         </p>
-        <div className="relative [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <div className="relative [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
           <div className="flex w-max animate-marquee gap-3 will-change-transform">
-            {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+            {[...data.dailyStack, ...data.dailyStack].map((tech, i) => (
               <span
                 key={`${tech}-${i}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur"
+                className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/50 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-gradient-accent" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--lime)/0.8)]" />
                 {tech}
               </span>
             ))}
@@ -315,7 +292,7 @@ function SocialIcon({
       aria-label={label}
       target={isMail ? undefined : "_blank"}
       rel={isMail ? undefined : "noreferrer"}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-[hsl(var(--grad-1)/0.6)] hover:text-foreground"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-[hsl(var(--lime)/0.5)] hover:text-[hsl(var(--lime))]"
     >
       {children}
     </a>
@@ -337,7 +314,7 @@ function FloatChip({
     <motion.div
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay }}
-      className={`z-10 inline-flex items-center gap-1.5 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-medium backdrop-blur shadow-lg shadow-black/20 ${className ?? ""}`}
+      className={`z-10 inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/90 px-3 py-1.5 text-xs font-medium backdrop-blur shadow-lg shadow-black/30 ${className ?? ""}`}
     >
       {icon}
       {label}

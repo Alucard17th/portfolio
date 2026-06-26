@@ -41,20 +41,27 @@ export default function App() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        {/* Mesh gradient — one slow-drifting warm-to-cool field */}
+        <div className="absolute inset-0 mesh-bg" />
+        {/* Lime glow — upper left, very subtle */}
         <div
-          className="absolute -left-[10%] top-[-15%] h-[55vh] w-[55vh] rounded-full opacity-60 blur-3xl animate-aurora"
-          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-1) / 0.45), transparent)" }}
+          className="absolute -left-[8%] top-[-10%] h-[45vh] w-[45vh] rounded-full blur-[120px] opacity-20 animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--lime) / 0.6), transparent)" }}
         />
+        {/* Orange glow — upper right */}
         <div
-          className="absolute right-[-10%] top-[10%] h-[50vh] w-[50vh] rounded-full opacity-50 blur-3xl animate-aurora"
-          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-2) / 0.40), transparent)", animationDelay: "-7s" }}
+          className="absolute right-[-8%] top-[5%] h-[40vh] w-[40vh] rounded-full blur-[140px] opacity-15 animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--orange) / 0.55), transparent)", animationDelay: "-9s" }}
         />
+        {/* Blue glow — bottom center */}
         <div
-          className="absolute left-[20%] bottom-[-20%] h-[60vh] w-[60vh] rounded-full opacity-40 blur-3xl animate-aurora"
-          style={{ background: "radial-gradient(closest-side, hsl(var(--grad-3) / 0.30), transparent)", animationDelay: "-14s" }}
+          className="absolute left-[25%] bottom-[-15%] h-[50vh] w-[50vh] rounded-full blur-[150px] opacity-12 animate-aurora"
+          style={{ background: "radial-gradient(closest-side, hsl(var(--blue-code) / 0.45), transparent)", animationDelay: "-18s" }}
         />
-        <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
-        <div className="absolute inset-0 noise opacity-[0.35] mix-blend-overlay" />
+        {/* Fine dot grid — barely visible */}
+        <div className="absolute inset-0 opacity-[0.045] [background-image:radial-gradient(circle,hsl(var(--foreground))_1px,transparent_1px)] [background-size:32px_32px]" />
+        {/* Noise overlay */}
+        <div className="absolute inset-0 noise opacity-[0.28] mix-blend-overlay" />
       </div>
 
       <Navbar />
